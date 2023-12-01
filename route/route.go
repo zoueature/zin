@@ -1,7 +1,7 @@
 package route
 
 import (
-	"github.com/jiebutech/app"
+	"gitlab.jiebu.com/base/app"
 )
 
 // RegisterRoute 路app

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/jiebutech/app"
-	"github.com/jiebutech/jin/conf"
-	"github.com/jiebutech/jin/route"
+	"gitlab.jiebu.com/base/app"
+	"gitlab.jiebu.com/base/jin/conf"
+	"gitlab.jiebu.com/base/jin/route"
 )
 
 func main() {
