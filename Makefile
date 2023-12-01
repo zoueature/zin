@@ -1,5 +1,3 @@
-build:
-	go build -o ./build/ .
 test:
 	go test ./...
 run:
@@ -8,3 +6,5 @@ config:
 	cp ./conf/application.yaml .
 wire:
 	cd wire && wire gen
+build:
+	./build.sh
