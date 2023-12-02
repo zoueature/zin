@@ -3,6 +3,9 @@ FROM golang:1.21.4-alpine as builder
 WORKDIR /build
 
 COPY . .
+ENV GOPRIVATE="gitlab.jiebu.com"
+ENV GOINSECURE="gitlab.jiebu.com"
+RUN git config --global url."git@gitlab.jiebu.com:".insteadOf http://gitlab.jiebu.com/
 
 RUN go mod tidy
 RUN go build -o app-runner .
