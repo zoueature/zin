@@ -1,3 +1,11 @@
+workflow:
+  rules:
+    # 只处理测试环境和开发环境的pipeline
+    - if: $CI_COMMIT_BRANCH =~ /^(feat\/|fix\/).*$/
+      when: always
+    - if: $CI_COMMIT_BRANCH == "test"
+      when: always
+    - when: always
 stages:
   - lint
   - test
