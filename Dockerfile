@@ -10,7 +10,7 @@ RUN go mod tidy
 RUN go build -o app-runner .
 
 
-FROM alpine:3.18.5
+FROM 192.168.1.202:5000/binary-runner:alpine
 
 WORKDIR /app
 
