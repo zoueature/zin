@@ -33,9 +33,9 @@ build:
   stage: build
   script:
     - echo "Building Docker image"
-    - echo "docker build -t 192.168.1.202:5000/test:dev --build-arg GIT_USER=$GIT_RUNNER_USER --build-arg GIT_TOKEN=$GIT_RUNNER_TOKEN  ."
-    - docker build -t 192.168.1.202:5000/test:dev --build-arg GIT_USER=$GIT_RUNNER_USER --build-arg GIT_TOKEN=$GIT_RUNNER_TOKEN  .
-    - docker push 192.168.1.202:5000/test:dev
+    - echo "docker build -t 192.168.1.202:5000/$CI_PROJECT_NAME:test  ."
+    - docker build -t 192.168.1.202:5000/$CI_PROJECT_NAME:test  .
+    - docker push 192.168.1.202:5000/$CI_PROJECT_NAME:test
 
 deploy:
   stage: deploy
@@ -43,3 +43,6 @@ deploy:
     - echo "Deploying to Kubernetes"
     # Add your Kubernetes deployment commands here
     # For example, you can use kubectl apply -f your_deployment.yaml
+    # deploy to the local docker
+    - export APP_PORT=$(yq '.app.listen' ./conf/application.test.yaml)
+    - docker run -d --name $CI_PROJECT_NAME -p $APP_PORT:80 192.168.1.202:5000/$CI_PROJECT_NAME:test
