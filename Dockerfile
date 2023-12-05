@@ -4,7 +4,7 @@ WORKDIR /build
 
 COPY . .
 
-RUN yq -i '.app.listen = ":80"' ./application.yaml
+RUN yq -i '.app.listen = ":80"' ./conf/application.yaml
 
 RUN go mod tidy
 RUN go build -o app-runner .
