@@ -21,7 +21,8 @@ build:
   stage: build
   script:
     - echo "Building Docker image"
-    - docker build -t 192.168.1.202:5000/test:dev --build-arg GIT_USER=$GIT_RUNNER_USER --build-arg GIT_TOKEN=$GIT_RUNNER_TOKENgit  .
+    - echo "docker build -t 192.168.1.202:5000/test:dev --build-arg GIT_USER=$GIT_RUNNER_USER --build-arg GIT_TOKEN=$GIT_RUNNER_TOKEN  ."
+    - docker build -t 192.168.1.202:5000/test:dev --build-arg GIT_USER=$GIT_RUNNER_USER --build-arg GIT_TOKEN=$GIT_RUNNER_TOKEN  .
     - docker push 192.168.1.202:5000/test:dev
 
 deploy:
