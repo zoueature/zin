@@ -1,4 +1,4 @@
-FROM 192.168.1.202:5000/golang:builder-1.0 as builder
+FROM 192.168.1.202:5000/golang:builder-alpine as builder
 
 WORKDIR /build
 
