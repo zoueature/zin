@@ -1,8 +1,16 @@
+workflow:
+  rules:
+    # 只处理测试环境和开发环境的分支
+    - if: '$CI_COMMIT_BRANCH =~ /^test|(feat/.*)|(fix/.*)$/'
+      when: always
+    - when: never
+
 stages:
   - lint
   - test
   - build
   - deploy
+
 variables:
   GIT_DEPTH: 0
 
@@ -10,13 +18,13 @@ lint:
   stage: lint
   script:
     - echo "Running lint tests"
-    # Add your linting commands here
+    - golangci-lint run -v ./...
 
 test:
   stage: test
   script:
     - echo "Running unit tests"
-    # Add your unit testing commands here
+    - go test ./...
 
 build:
   stage: build
