@@ -4,7 +4,7 @@ WORKDIR /build
 
 COPY . .
 
-RUN yq -i '.app.listen = ":80"' ./conf/application.yaml
+RUN yq -i '.app.listen = ":80"' ./conf/application.dev.yaml
 
 RUN go mod tidy
 RUN go build -o app-runner .
@@ -15,6 +15,6 @@ FROM alpine:3.18.5
 WORKDIR /app
 
 COPY --from=builder /build/app-runner ./app
-COPY --from=builder /build/application.yaml .
+COPY --from=builder /build/conf/application.dev.yaml .
 
 CMD ['./app']
