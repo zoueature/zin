@@ -1,6 +1,6 @@
-# Jin
+# Zin
 
-### Http接口接口开发框架
+### 基于Gin上封装的Http接口接口开发框架
 
 ### Dependencies
 1. wire
