@@ -7,5 +7,5 @@ import (
 )
 
 func NewApiController() *api.ApiCtrl {
-	panic(wire.Build())
+	panic(wire.Build(ctrl.NewController))
 }

@@ -1,13 +1,11 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"gitlab.jiebu.com/base/app"
-	"gitlab.jiebu.com/base/jin/conf"
+	"gitlab.jiebu.com/base/zin/conf"
+	"gitlab.jiebu.com/base/zin/route"
 )
 
 func main() {
-	app.RunApp(conf.GetConfig().Configuration, app.RouteRegister(func(c *gin.Engine) {
-
-	}))
+	app.RunApp(conf.GetConfig().Configuration, app.RouteRegister(route.RegisterRoute))
 }

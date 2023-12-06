@@ -1,10 +1,10 @@
 package route
 
 import (
-	"gitlab.jiebu.com/base/app"
+	"github.com/gin-gonic/gin"
 )
 
 // RegisterRoute 路app
-func RegisterRoute(app *app.App) {
+func RegisterRoute(eng *gin.Engine) {
 
 }
