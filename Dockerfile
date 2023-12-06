@@ -16,4 +16,4 @@ FROM 192.168.1.202:5000/binary-runner:alpine
 COPY --from=builder /build/app-runner ./app
 COPY --from=builder /build/conf/application.test.yaml ./application.yaml
 
-CMD ['./app']
+CMD ./app
