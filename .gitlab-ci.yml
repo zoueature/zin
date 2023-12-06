@@ -5,7 +5,7 @@ workflow:
       when: always
     - if: $CI_COMMIT_BRANCH == "test"
       when: always
-    - when: always
+    - when: never
 
 
 stages:
