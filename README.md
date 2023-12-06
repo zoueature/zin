@@ -27,7 +27,7 @@
 
 
 #### 配置文件初始化
-> make config
+> make config env(dev/test/prod)
 
 #### 启动
 > make run

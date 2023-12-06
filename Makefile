@@ -3,8 +3,8 @@ test:
 run:
 	go run main.go
 config:
-	cp ./conf/application.yaml .
+	ln -s ./conf/application.$(word 2,$(MAKECMDGOALS)).yaml ./application.yaml
 wire:
 	cd wire && wire gen
 build:
-	./build.sh
+	go build -o ./build/ .
