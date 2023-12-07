@@ -7,7 +7,7 @@
 > go install github.com/google/wire/cmd/wire@latest
 
 ### Install
-> git clone git@gitlab.jiebu.com:base/zin.git youProjectname
+> git clone https://github.com/zoueature/zin.git youProjectname
 
 ### 初始化
 ### 生成实例化构建文件
