@@ -7,5 +7,7 @@ import (
 )
 
 func main() {
-	app.RunApp(conf.GetConfig().Configuration, app.RouteRegister(route.RegisterRoute))
+	app.RunApp(conf.GetConfig().Configuration, app.RouteRegister(route.RegisterRoute), app.AfterRegister(func() {
+
+	}))
 }
