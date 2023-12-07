@@ -14,7 +14,7 @@
 > cd wire && wire gen  
 > 或者 make wire
 #### 安装依赖包
-1. 删除原有go.mod (可选, 不重置的化， 对应项目的module为`gitlab.jiebu.com/base/zin`)
+1. 删除原有go.mod (可选, 不重置的化， 对应项目的module为`github.com/zoueature/zin`)
 > rm -f go.*
 
 2. 拉取依赖
@@ -22,8 +22,8 @@
 > go mod tidy
 
 #### 在main.go中修改对应路由和配置文件的引用
-> rename gitlab.jiebu.com/base/zin/conf => youConfigPkg  
-> rename gitlab.jiebu.com/base/zin/route => youRoutePkg
+> rename github.com/zoueature/zin/conf => youConfigPkg  
+> rename github.com/zoueature/zin/route => youRoutePkg
 
 
 #### 配置文件初始化

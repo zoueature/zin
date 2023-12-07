@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"gitlab.jiebu.com/base/config"
+	"github.com/zoueature/config"
 )
 
 type AppConf struct {
