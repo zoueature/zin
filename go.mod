@@ -6,7 +6,7 @@ require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/google/wire v0.5.0
 	github.com/zoueature/app v0.0.5
-	github.com/zoueature/config v0.0.4
+	github.com/zoueature/config v0.0.5
 )
 
 require (
